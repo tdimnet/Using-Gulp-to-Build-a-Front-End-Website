@@ -1,0 +1,22 @@
+{
+  "name": "gulp-build-v1",
+  "version": "1.0.0",
+  "description": "Here is the eighth project of the treehouse techdegree in full stack javascript: a front end website which uses gulp for its workflow.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdimnet/Using-Gulp-to-Build-a-Front-End-Website.git"
+  },
+  "author": "Thomas Dimnet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tdimnet/Using-Gulp-to-Build-a-Front-End-Website/issues"
+  },
+  "homepage": "https://github.com/tdimnet/Using-Gulp-to-Build-a-Front-End-Website#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
