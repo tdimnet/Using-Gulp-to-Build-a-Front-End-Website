@@ -1,12 +1,13 @@
 'use strict';
 
-var gulp      = require('gulp');
-var concat    = require('gulp-concat');
-var uglify    = require('gulp-uglify');
+const gulp      = require('gulp');
+const concat    = require('gulp-concat');
+const uglify    = require('gulp-uglify');
 
 
 gulp.task('scripts', () => {
-    return gulp.src('./*.js')
+    return gulp.src('./js/circle/*.js')
         .pipe(concat('all.js'))
-        .pipe(gulp.dest('./dist'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/js'))
 });
