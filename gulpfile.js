@@ -31,3 +31,10 @@ gulp.task('styles', () => {
         .pipe(maps.write('./'))
         .pipe(gulp.dest('./dist/css'))
 }); // End: gulp styles
+
+
+// Run all the gulp scripts write below
+gulp.task('build', [
+    'scripts',
+    'styles'
+]); // End: gulp build
