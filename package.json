@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tdimnet/Using-Gulp-to-Build-a-Front-End-Website#readme",
   "devDependencies": {
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",

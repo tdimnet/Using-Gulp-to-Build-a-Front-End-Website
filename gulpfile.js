@@ -5,6 +5,7 @@ const concat    = require('gulp-concat');
 const uglify    = require('gulp-uglify');
 const sass      = require('gulp-sass');
 const maps      = require('gulp-sourcemaps');
+const del       = require('del');
 
 
 // Concat and minify all js files
@@ -33,8 +34,15 @@ gulp.task('styles', () => {
 }); // End: gulp styles
 
 
+// Clean the files inside the dist folder
+gulp.task('clean', () => {
+    return del('./dist')
+}); // End: gulp clean
+
+
 // Run all the gulp scripts write below
 gulp.task('build', [
+    'clean',
     'scripts',
     'styles'
 ]); // End: gulp build
