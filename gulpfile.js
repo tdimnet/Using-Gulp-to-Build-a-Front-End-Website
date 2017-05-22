@@ -6,6 +6,22 @@ const uglify    = require('gulp-uglify');
 const sass      = require('gulp-sass');
 const maps      = require('gulp-sourcemaps');
 const del       = require('del');
+const image     = require('gulp-image');
+
+
+// Minify and optimize all image files
+gulp.task('images', () => {
+    return gulp.src([
+        './images/*.png',
+        './images/*.jpg'
+    ])
+        .pipe(image({
+            jpegRecompress: true,
+            jpegoptim: false,
+            mozjpeg: false,
+        }))
+        .pipe(gulp.dest('./dist/images'))
+}); // End: images
 
 
 // Concat and minify all js files
@@ -43,6 +59,7 @@ gulp.task('clean', () => {
 // Run all the gulp scripts write below
 gulp.task('build', [
     'clean',
+    'images',
     'scripts',
     'styles'
 ]); // End: gulp build
