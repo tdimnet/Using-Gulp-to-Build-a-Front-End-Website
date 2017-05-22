@@ -7,6 +7,7 @@ const sass      = require('gulp-sass');
 const maps      = require('gulp-sourcemaps');
 const del       = require('del');
 const image     = require('gulp-image');
+const connect   = require('gulp-connect');
 
 
 // Minify and optimize all image files
@@ -63,3 +64,11 @@ gulp.task('build', [
     'scripts',
     'styles'
 ]); // End: gulp build
+
+
+// Run all the gulp scripts write below
+gulp.task('connect', () => {
+    connect.server({
+        livereload: true
+    });
+}); // End: gulp connect
