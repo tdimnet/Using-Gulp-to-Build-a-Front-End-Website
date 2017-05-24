@@ -73,17 +73,19 @@ gulp.task('build', [
     'copyIndex',
     'images',
     'scripts',
-    'styles'
+    'styles',
+    'connect',
 ]); // End: gulp build
 
 
+// Watched the css files when a modification occurs
 gulp.task('watch', () => {
     gulp.watch('sass/**/*.scss', ['styles']);
-});
+}); // End: gulp watch
 
 
 // Run all the gulp scripts write below
-gulp.task('connect', () => {
+gulp.task('connect', ['watch'] ,() => {
     connect.server({
         root: 'dist',
         livereload: true
