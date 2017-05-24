@@ -9,6 +9,9 @@ const del       = require('del');
 const image     = require('gulp-image');
 const connect   = require('gulp-connect');
 
+// The default gulp command
+gulp.task('default', ['build']);
+
 
 // Minify and optimize all image files
 gulp.task('images', () => {
