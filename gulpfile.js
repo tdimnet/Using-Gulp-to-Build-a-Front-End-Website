@@ -77,6 +77,11 @@ gulp.task('build', [
 ]); // End: gulp build
 
 
+gulp.task('watch', () => {
+    gulp.watch('sass/**/*.scss', ['styles']);
+});
+
+
 // Run all the gulp scripts write below
 gulp.task('connect', () => {
     connect.server({
