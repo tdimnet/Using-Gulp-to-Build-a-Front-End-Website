@@ -57,9 +57,17 @@ gulp.task('clean', () => {
 }); // End: gulp clean
 
 
+// Copy and paste the index.html file
+gulp.task('copyIndex', () => {
+  gulp.src('./index.html')
+    .pipe(gulp.dest('./dist/'))
+}); // End: gulp copyIndex
+
+
 // Run all the gulp scripts write below
 gulp.task('build', [
     'clean',
+    'copyIndex',
     'images',
     'scripts',
     'styles'
@@ -69,6 +77,7 @@ gulp.task('build', [
 // Run all the gulp scripts write below
 gulp.task('connect', () => {
     connect.server({
+        root: 'dist',
         livereload: true
     });
 }); // End: gulp connect
