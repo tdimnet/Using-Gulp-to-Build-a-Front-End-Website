@@ -45,11 +45,11 @@ gulp.task('scripts', () => {
 // Concat and minify all sass files
 gulp.task('styles', () => {
     return gulp.src('./sass/**/*.scss')
+        .pipe(concat('all.min.css'))
         .pipe(maps.init())
         .pipe(sass(
             {outputStyle: 'compressed'}
         ))
-        .pipe(rename('foo.css'))
         .pipe(maps.write('./'))
         .pipe(gulp.dest('./dist/css'))
 }); // End: gulp styles
