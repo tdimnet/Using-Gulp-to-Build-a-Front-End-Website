@@ -1,13 +1,14 @@
 'use strict';
 
-const gulp      = require('gulp');
-const concat    = require('gulp-concat');
-const uglify    = require('gulp-uglify');
-const sass      = require('gulp-sass');
-const maps      = require('gulp-sourcemaps');
-const del       = require('del');
-const image     = require('gulp-image');
-const connect   = require('gulp-connect');
+const gulp          = require('gulp');
+const concat        = require('gulp-concat');
+const uglify        = require('gulp-uglify');
+const sass          = require('gulp-sass');
+const maps          = require('gulp-sourcemaps');
+const del           = require('del');
+const image         = require('gulp-image');
+const connect       = require('gulp-connect');
+const runSequence   = require('run-sequence');
 
 // The default gulp command
 gulp.task('default', ['build']);
@@ -69,14 +70,18 @@ gulp.task('copyIndex', () => {
 
 
 // Run all the gulp scripts write below
-gulp.task('build', [
+gulp.task('build', () => {
+  runSequence(
     'clean',
-    'copyIndex',
-    'images',
-    'scripts',
-    'styles',
-    'connect',
-]); // End: gulp build
+    [
+      'copyIndex',
+      'images',
+      'scripts',
+      'styles',
+    ]
+  )
+});
+
 
 
 // Watched the css files when a modification occurs
