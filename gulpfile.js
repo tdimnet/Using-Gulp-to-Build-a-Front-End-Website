@@ -24,7 +24,7 @@ gulp.task('images', () => {
             jpegoptim: false,
             mozjpeg: false,
         }))
-        .pipe(gulp.dest('./dist/images'))
+        .pipe(gulp.dest('./dist/content'))
 }); // End: images
 
 
@@ -49,6 +49,7 @@ gulp.task('styles', () => {
         .pipe(sass(
             {outputStyle: 'compressed'}
         ))
+        .pipe(rename('foo.css'))
         .pipe(maps.write('./'))
         .pipe(gulp.dest('./dist/css'))
 }); // End: gulp styles
