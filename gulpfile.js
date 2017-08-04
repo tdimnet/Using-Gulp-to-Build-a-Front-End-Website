@@ -78,7 +78,8 @@ gulp.task('build', () => {
       'images',
       'scripts',
       'styles',
-    ]
+    ],
+    'connect'
   )
 });
 
